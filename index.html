@@ -22,18 +22,19 @@
   --gold-light:#e8c85c;
   --text:#f3f3f5;
   --muted:#95959f;
-  --radius:18px;
+  --radius:16px;
   --max:640px;
 }
 
 /* ============ RESET ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
 body{
   font-family:'Inter',system-ui,-apple-system,sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.65;
+  font-size:1rem;      /* 16px — base Google */
+  line-height:1.6;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
   -webkit-tap-highlight-color:transparent;
@@ -48,60 +49,60 @@ ul{list-style:none;}
   width:100%;
   max-width:var(--max);
   margin:0 auto;
-  padding:0 22px;
+  padding:0 20px;
 }
-section{padding:76px 0;scroll-margin-top:80px;}
+section{padding:52px 0;scroll-margin-top:70px;}
 .eyebrow{
   display:inline-block;
-  font-size:.68rem;
+  font-size:.75rem;       /* 12px */
   font-weight:600;
-  letter-spacing:.3em;
+  letter-spacing:.28em;
   text-transform:uppercase;
   color:var(--gold);
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 h2{
   font-family:'Bebas Neue',sans-serif;
   font-weight:400;
-  font-size:clamp(2.1rem,10vw,2.9rem);
-  line-height:1.02;
+  font-size:clamp(1.65rem, 6.5vw, 2.2rem);
+  line-height:1.05;
   letter-spacing:.5px;
-  margin-bottom:14px;
+  margin-bottom:10px;
 }
-.lead{color:var(--muted);font-size:.95rem;max-width:44ch;}
+.lead{color:var(--muted);font-size:.92rem;max-width:44ch;}
 .gold{color:var(--gold);}
 
 /* ============ HEADER ============ */
 .header{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:14px 0;
-  padding-top:calc(14px + env(safe-area-inset-top));
+  padding:10px 0;
+  padding-top:calc(10px + env(safe-area-inset-top));
   border-bottom:1px solid transparent;
-  transition:background .35s ease, backdrop-filter .35s ease, border-color .35s ease;
+  transition:background .3s ease, backdrop-filter .3s ease, border-color .3s ease;
 }
 .header.scrolled{
-  background:rgba(11,11,13,.8);
+  background:rgba(11,11,13,.82);
   backdrop-filter:blur(16px);
   -webkit-backdrop-filter:blur(16px);
   border-bottom-color:rgba(201,162,39,.18);
 }
 .header-inner{
-  max-width:var(--max);margin:0 auto;padding:0 22px;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:var(--max);margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
 }
 .logo{
   font-family:'Bebas Neue',sans-serif;
-  font-size:1.45rem;letter-spacing:2.5px;line-height:1;
+  font-size:1.3rem;letter-spacing:2px;line-height:1;
   white-space:nowrap;
 }
 .logo span{color:var(--gold);}
 .btn-header{
-  font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-  padding:10px 18px;border-radius:999px;
+  font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  padding:9px 16px;border-radius:999px;
   color:#0b0b0d;
   background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  box-shadow:0 6px 18px rgba(201,162,39,.25);
-  transition:transform .2s ease, box-shadow .2s ease;
+  box-shadow:0 6px 16px rgba(201,162,39,.25);
+  transition:transform .2s ease;
 }
 .btn-header:active{transform:scale(.96);}
 
@@ -109,9 +110,8 @@ h2{
 .hero{
   position:relative;
   display:flex;align-items:center;
-  min-height:100vh;
-  min-height:100svh;
-  padding:130px 0 90px;
+  min-height:78svh;
+  padding:96px 0 56px;
   overflow:hidden;
 }
 .hero-bg{
@@ -129,32 +129,32 @@ h2{
 .hero h1{
   font-family:'Bebas Neue',sans-serif;
   font-weight:400;
-  font-size:clamp(3.2rem,17vw,5.2rem);
-  line-height:.9;
+  font-size:clamp(2.6rem, 13vw, 4.2rem);
+  line-height:.92;
   letter-spacing:1px;
-  margin:6px 0 20px;
+  margin:4px 0 16px;
 }
 .hero p{
   color:#c9c9d2;
-  font-size:.98rem;
+  font-size:1rem;
   max-width:34ch;
-  margin:0 auto 34px;
+  margin:0 auto 26px;
 }
-.hero-actions{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+.hero-actions{display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto;}
 
 /* ============ BOTÕES ============ */
 .btn{
   display:flex;align-items:center;justify-content:center;gap:10px;
-  padding:16px 26px;
+  padding:14px 22px;
   border-radius:999px;
   font-size:.92rem;font-weight:600;letter-spacing:.02em;
-  transition:transform .18s ease, box-shadow .25s ease, background .25s ease;
+  transition:transform .18s ease;
 }
 .btn:active{transform:scale(.97);}
 .btn-primary{
   color:#0b0b0d;
   background:linear-gradient(135deg,var(--gold-light),var(--gold));
-  box-shadow:0 10px 28px rgba(201,162,39,.28);
+  box-shadow:0 10px 24px rgba(201,162,39,.28);
 }
 .btn-ghost{
   color:var(--text);
@@ -162,102 +162,108 @@ h2{
   background:rgba(255,255,255,.03);
   backdrop-filter:blur(6px);
 }
-.btn svg{width:19px;height:19px;flex-shrink:0;}
+.btn svg{width:18px;height:18px;flex-shrink:0;}
 
 /* ============ SERVIÇOS ============ */
-.services{display:flex;flex-direction:column;gap:10px;margin-top:26px;}
+.services{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  margin-top:20px;
+}
 .service{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:5px;
   background:var(--card);
   border:1px solid var(--line);
   border-radius:var(--radius);
-  padding:18px 20px;
-  transition:border-color .25s ease, transform .25s ease, background .25s ease;
+  padding:14px;
+  transition:border-color .25s ease, transform .2s ease;
 }
-.service:active{border-color:rgba(201,162,39,.5);transform:scale(.99);}
+.service:active{border-color:rgba(201,162,39,.5);transform:scale(.98);}
 .service h3{
-  font-size:.98rem;font-weight:600;letter-spacing:.01em;margin-bottom:2px;
+  font-size:.92rem;font-weight:600;line-height:1.25;
 }
-.service p{font-size:.79rem;color:var(--muted);line-height:1.4;}
+.service p{font-size:.8rem;color:var(--muted);line-height:1.35;}
 .price{
   font-family:'Bebas Neue',sans-serif;
-  font-size:1.4rem;letter-spacing:1px;
+  font-size:1.25rem;letter-spacing:.8px;
   color:var(--gold);
-  white-space:nowrap;
+  margin-top:auto;
+  line-height:1;
 }
 
 /* ============ GALERIA ============ */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  margin-top:26px;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:20px;
 }
 .gallery figure{
   aspect-ratio:1/1;
-  border-radius:14px;
+  border-radius:12px;
   overflow:hidden;
   background:var(--card);
   border:1px solid var(--line);
 }
-.gallery figure:first-child{grid-column:span 2;aspect-ratio:16/11;}
-.gallery img{transition:transform .5s ease;}
-.gallery figure:active img{transform:scale(1.06);}
 
 /* ============ SOBRE ============ */
 .about-img{
-  aspect-ratio:16/10;
+  aspect-ratio:16/9;
   border-radius:var(--radius);
   overflow:hidden;
   border:1px solid var(--line);
-  margin-bottom:26px;
+  margin-bottom:18px;
 }
 .stats{
   display:grid;grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-top:26px;
+  gap:8px;
+  margin-top:18px;
 }
 .stat{
   background:var(--card);
   border:1px solid var(--line);
-  border-radius:14px;
-  padding:16px 10px;
+  border-radius:12px;
+  padding:14px 8px;
   text-align:center;
 }
 .stat strong{
   display:block;
   font-family:'Bebas Neue',sans-serif;
-  font-size:1.65rem;
+  font-size:1.4rem;
   color:var(--gold);
   line-height:1;
   letter-spacing:.5px;
 }
-.stat span{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+.stat span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
 
 /* ============ CONTATO / HORÁRIOS ============ */
 .info-card{
   background:var(--card);
   border:1px solid var(--line);
   border-radius:var(--radius);
-  padding:6px 20px;
-  margin-top:26px;
+  padding:2px 16px;
+  margin-top:20px;
 }
 .info-row{
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding:16px 0;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:12px 0;
   border-bottom:1px solid var(--line);
-  font-size:.88rem;
+  font-size:.9rem;
 }
 .info-row:last-child{border-bottom:none;}
 .info-row .label{color:var(--muted);}
-.info-row .value{font-weight:500;text-align:right;}
+.info-row .value{font-weight:500;text-align:right;line-height:1.4;}
 .info-row .value.gold{color:var(--gold);}
 
 .cta-box{
-  margin-top:30px;
+  margin-top:22px;
   text-align:center;
-  padding:34px 22px;
-  border-radius:22px;
+  padding:26px 18px;
+  border-radius:18px;
   background:
     radial-gradient(circle at 50% 0%, rgba(201,162,39,.16), transparent 65%),
     var(--bg-soft);
@@ -266,47 +272,70 @@ h2{
 .cta-box h3{
   font-family:'Bebas Neue',sans-serif;
   font-weight:400;
-  font-size:1.75rem;
+  font-size:1.5rem;
   letter-spacing:.5px;
-  margin-bottom:8px;
+  margin-bottom:6px;
 }
-.cta-box p{color:var(--muted);font-size:.88rem;margin-bottom:22px;}
+.cta-box p{color:var(--muted);font-size:.88rem;margin-bottom:18px;}
 
 /* ============ FOOTER ============ */
 .footer{
-  padding:38px 0 calc(38px + env(safe-area-inset-bottom));
+  padding:28px 0 calc(28px + env(safe-area-inset-bottom));
   border-top:1px solid var(--line);
   text-align:center;
 }
-.footer .logo{font-size:1.25rem;margin-bottom:8px;}
-.footer p{font-size:.76rem;color:var(--muted);}
+.footer .logo{font-size:1.15rem;margin-bottom:6px;}
+.footer p{font-size:.78rem;color:var(--muted);}
 .footer .sep{color:var(--gold);margin:0 6px;}
 
 /* ============ WHATSAPP FLUTUANTE ============ */
 .whats-float{
   position:fixed;
-  right:18px;
-  bottom:calc(18px + env(safe-area-inset-bottom));
+  right:16px;
+  bottom:calc(16px + env(safe-area-inset-bottom));
   z-index:90;
-  width:58px;height:58px;
+  width:54px;height:54px;
   display:grid;place-items:center;
   border-radius:50%;
   background:linear-gradient(135deg,#2ee36b,#1faa4f);
-  box-shadow:0 10px 26px rgba(31,170,79,.38);
+  box-shadow:0 10px 24px rgba(31,170,79,.38);
   transition:transform .2s ease;
 }
 .whats-float:active{transform:scale(.92);}
-.whats-float svg{width:29px;height:29px;fill:#fff;}
+.whats-float svg{width:27px;height:27px;fill:#fff;}
 
 /* ============ TABLET / DESKTOP ============ */
 @media (min-width:640px){
   :root{--max:720px;}
-  section{padding:96px 0;}
-  .hero-actions{flex-direction:row;max-width:none;}
+  section{padding:80px 0;}
+  h2{font-size:2.4rem;margin-bottom:14px;}
+  .lead{font-size:1rem;}
+  .header{padding:14px 0;}
+  .header-inner{padding:0 22px;}
+  .logo{font-size:1.45rem;letter-spacing:2.5px;}
+  .btn-header{font-size:.85rem;padding:10px 18px;}
+  .hero{min-height:88svh;padding:120px 0 80px;}
+  .hero h1{font-size:5rem;}
+  .hero p{font-size:1.05rem;margin-bottom:32px;}
+  .hero-actions{flex-direction:row;max-width:none;justify-content:center;}
+  .btn{padding:16px 26px;font-size:.95rem;}
+  .container{padding:0 22px;}
+  .services{grid-template-columns:1fr 1fr;gap:12px;}
+  .service{padding:18px 20px;gap:6px;}
+  .service h3{font-size:1rem;}
+  .service p{font-size:.85rem;}
+  .price{font-size:1.4rem;}
   .gallery{grid-template-columns:repeat(3,1fr);gap:12px;}
   .gallery figure:first-child{grid-column:span 3;aspect-ratio:21/9;}
-  .services{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  .info-card{padding:6px 26px;}
+  .about-img{aspect-ratio:16/10;margin-bottom:26px;}
+  .stats{gap:10px;margin-top:26px;}
+  .stat{padding:18px 10px;}
+  .stat strong{font-size:1.7rem;}
+  .info-card{padding:6px 26px;margin-top:26px;}
+  .info-row{padding:16px 0;font-size:.95rem;}
+  .cta-box{padding:34px 22px;margin-top:30px;}
+  .cta-box h3{font-size:1.8rem;}
+  .footer{padding:38px 0 calc(38px + env(safe-area-inset-bottom));}
 }
 </style>
 </head>
@@ -349,55 +378,43 @@ h2{
     <div>
       <span class="eyebrow">Nossos serviços</span>
       <h2>O corte certo,<br>sem enrolação</h2>
-      <p class="lead">Trabalhamos com hora marcada para você não perder tempo na espera.</p>
+      <p class="lead">Hora marcada para você não perder tempo na espera.</p>
     </div>
 
     <ul class="services">
       <li class="service">
-        <div>
-          <h3>Corte Masculino</h3>
-          <p>Máquina, tesoura e finalização</p>
-        </div>
+        <h3>Corte Masculino</h3>
+        <p>Máquina, tesoura e finalização</p>
         <span class="price">R$ 45</span>
       </li>
 
       <li class="service">
-        <div>
-          <h3>Barba na Navalha</h3>
-          <p>Toalha quente, óleo e acabamento</p>
-        </div>
+        <h3>Barba na Navalha</h3>
+        <p>Toalha quente, óleo e acabamento</p>
         <span class="price">R$ 35</span>
       </li>
 
       <li class="service">
-        <div>
-          <h3>Combo Corte + Barba</h3>
-          <p>O pacote completo, com desconto</p>
-        </div>
+        <h3>Combo Corte + Barba</h3>
+        <p>O pacote completo, com desconto</p>
         <span class="price">R$ 70</span>
       </li>
 
       <li class="service">
-        <div>
-          <h3>Sobrancelha</h3>
-          <p>Design masculino na navalha</p>
-        </div>
+        <h3>Sobrancelha</h3>
+        <p>Design masculino na navalha</p>
         <span class="price">R$ 20</span>
       </li>
 
       <li class="service">
-        <div>
-          <h3>Pigmentação</h3>
-          <p>Preenchimento de falhas na barba</p>
-        </div>
+        <h3>Pigmentação</h3>
+        <p>Preenchimento de falhas</p>
         <span class="price">R$ 40</span>
       </li>
 
       <li class="service">
-        <div>
-          <h3>Platinado / Luzes</h3>
-          <p>Descoloração e tonalização</p>
-        </div>
+        <h3>Platinado / Luzes</h3>
+        <p>Descoloração e tonalização</p>
         <span class="price">R$ 120</span>
       </li>
     </ul>
@@ -410,32 +427,31 @@ h2{
     <div>
       <span class="eyebrow">Galeria</span>
       <h2>Nosso trabalho</h2>
-      <p class="lead">Um pouco do que sai da cadeira todos os dias.</p>
     </div>
 
     <div class="gallery">
       <figure>
-        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80"
+        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80"
              alt="Interior da barbearia" onerror="this.style.display='none'">
       </figure>
       <figure>
-        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=500&q=80"
+        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=400&q=80"
              alt="Corte masculino" onerror="this.style.display='none'">
       </figure>
       <figure>
-        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=500&q=80"
+        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=400&q=80"
              alt="Barba feita na navalha" onerror="this.style.display='none'">
       </figure>
       <figure>
-        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=500&q=80"
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=400&q=80"
              alt="Detalhe do acabamento" onerror="this.style.display='none'">
       </figure>
       <figure>
-        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=500&q=80"
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=400&q=80"
              alt="Barbeiro finalizando o corte" onerror="this.style.display='none'">
       </figure>
       <figure>
-        <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=500&q=80"
+        <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=400&q=80"
              alt="Cliente satisfeito" onerror="this.style.display='none'">
       </figure>
     </div>
@@ -454,9 +470,9 @@ h2{
       <span class="eyebrow">Quem somos</span>
       <h2>Não é só um corte.<br>É o seu momento.</h2>
       <p class="lead">
-        Somos uma barbearia de bairro com alma clássica e cabeça moderna.
-        Café na entrada, boa música e barbeiros que entendem de formato de rosto,
-        textura de cabelo e — principalmente — de conversar antes de pegar a máquina.
+        Barbearia de bairro com alma clássica e cabeça moderna. Café na entrada,
+        boa música e barbeiros que entendem de formato de rosto, textura de cabelo
+        e — principalmente — de conversar antes de pegar a máquina.
       </p>
     </div>
 
@@ -486,7 +502,7 @@ h2{
         <span class="value">08:00 – 19:00</span>
       </div>
       <div class="info-row">
-        <span class="label">Domingo e Segunda</span>
+        <span class="label">Dom. e Seg.</span>
         <span class="value gold">Fechado</span>
       </div>
       <div class="info-row">
