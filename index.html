@@ -298,19 +298,6 @@ h2{
 .whats-float:active{transform:scale(.92);}
 .whats-float svg{width:29px;height:29px;fill:#fff;}
 
-/* ============ ANIMAÇÃO REVEAL ============ */
-.reveal{
-  opacity:0;
-  transform:translateY(26px);
-  transition:opacity .75s ease, transform .75s cubic-bezier(.2,.7,.3,1);
-}
-.reveal.visible{opacity:1;transform:none;}
-
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto;}
-  .reveal{opacity:1;transform:none;transition:none;}
-}
-
 /* ============ TABLET / DESKTOP ============ */
 @media (min-width:640px){
   :root{--max:720px;}
@@ -359,14 +346,14 @@ h2{
 <!-- ================= SERVIÇOS ================= -->
 <section id="servicos">
   <div class="container">
-    <div class="reveal">
+    <div>
       <span class="eyebrow">Nossos serviços</span>
       <h2>O corte certo,<br>sem enrolação</h2>
       <p class="lead">Trabalhamos com hora marcada para você não perder tempo na espera.</p>
     </div>
 
     <ul class="services">
-      <li class="service reveal">
+      <li class="service">
         <div>
           <h3>Corte Masculino</h3>
           <p>Máquina, tesoura e finalização</p>
@@ -374,7 +361,7 @@ h2{
         <span class="price">R$ 45</span>
       </li>
 
-      <li class="service reveal">
+      <li class="service">
         <div>
           <h3>Barba na Navalha</h3>
           <p>Toalha quente, óleo e acabamento</p>
@@ -382,7 +369,7 @@ h2{
         <span class="price">R$ 35</span>
       </li>
 
-      <li class="service reveal">
+      <li class="service">
         <div>
           <h3>Combo Corte + Barba</h3>
           <p>O pacote completo, com desconto</p>
@@ -390,7 +377,7 @@ h2{
         <span class="price">R$ 70</span>
       </li>
 
-      <li class="service reveal">
+      <li class="service">
         <div>
           <h3>Sobrancelha</h3>
           <p>Design masculino na navalha</p>
@@ -398,7 +385,7 @@ h2{
         <span class="price">R$ 20</span>
       </li>
 
-      <li class="service reveal">
+      <li class="service">
         <div>
           <h3>Pigmentação</h3>
           <p>Preenchimento de falhas na barba</p>
@@ -406,7 +393,7 @@ h2{
         <span class="price">R$ 40</span>
       </li>
 
-      <li class="service reveal">
+      <li class="service">
         <div>
           <h3>Platinado / Luzes</h3>
           <p>Descoloração e tonalização</p>
@@ -420,36 +407,36 @@ h2{
 <!-- ================= GALERIA ================= -->
 <section id="galeria">
   <div class="container">
-    <div class="reveal">
+    <div>
       <span class="eyebrow">Galeria</span>
       <h2>Nosso trabalho</h2>
       <p class="lead">Um pouco do que sai da cadeira todos os dias.</p>
     </div>
 
     <div class="gallery">
-      <figure class="reveal">
+      <figure>
         <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80"
-             alt="Interior da barbearia" loading="lazy" onerror="this.style.display='none'">
+             alt="Interior da barbearia" onerror="this.style.display='none'">
       </figure>
-      <figure class="reveal">
+      <figure>
         <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=500&q=80"
-             alt="Corte masculino" loading="lazy" onerror="this.style.display='none'">
+             alt="Corte masculino" onerror="this.style.display='none'">
       </figure>
-      <figure class="reveal">
+      <figure>
         <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=500&q=80"
-             alt="Barba feita na navalha" loading="lazy" onerror="this.style.display='none'">
+             alt="Barba feita na navalha" onerror="this.style.display='none'">
       </figure>
-      <figure class="reveal">
+      <figure>
         <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=500&q=80"
-             alt="Detalhe do acabamento" loading="lazy" onerror="this.style.display='none'">
+             alt="Detalhe do acabamento" onerror="this.style.display='none'">
       </figure>
-      <figure class="reveal">
+      <figure>
         <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=500&q=80"
-             alt="Barbeiro finalizando o corte" loading="lazy" onerror="this.style.display='none'">
+             alt="Barbeiro finalizando o corte" onerror="this.style.display='none'">
       </figure>
-      <figure class="reveal">
+      <figure>
         <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=500&q=80"
-             alt="Cliente satisfeito" loading="lazy" onerror="this.style.display='none'">
+             alt="Cliente satisfeito" onerror="this.style.display='none'">
       </figure>
     </div>
   </div>
@@ -458,12 +445,12 @@ h2{
 <!-- ================= SOBRE ================= -->
 <section id="sobre">
   <div class="container">
-    <figure class="about-img reveal">
+    <figure class="about-img">
       <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80"
-           alt="Ambiente da barbearia" loading="lazy" onerror="this.style.display='none'">
+           alt="Ambiente da barbearia" onerror="this.style.display='none'">
     </figure>
 
-    <div class="reveal">
+    <div>
       <span class="eyebrow">Quem somos</span>
       <h2>Não é só um corte.<br>É o seu momento.</h2>
       <p class="lead">
@@ -473,7 +460,7 @@ h2{
       </p>
     </div>
 
-    <div class="stats reveal">
+    <div class="stats">
       <div class="stat"><strong>10+</strong><span>Anos</span></div>
       <div class="stat"><strong>5k+</strong><span>Clientes</span></div>
       <div class="stat"><strong>4.9</strong><span>Avaliação</span></div>
@@ -484,12 +471,12 @@ h2{
 <!-- ================= CONTATO ================= -->
 <section id="contato">
   <div class="container">
-    <div class="reveal">
+    <div>
       <span class="eyebrow">Onde nos encontrar</span>
       <h2>Horários &amp; endereço</h2>
     </div>
 
-    <div class="info-card reveal">
+    <div class="info-card">
       <div class="info-row">
         <span class="label">Terça a Sexta</span>
         <span class="value">09:00 – 20:00</span>
@@ -512,7 +499,7 @@ h2{
       </div>
     </div>
 
-    <div class="cta-box reveal">
+    <div class="cta-box">
       <h3>Bora marcar seu horário?</h3>
       <p>Respondemos rapidinho no WhatsApp.</p>
       <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
@@ -544,26 +531,6 @@ h2{
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
-
-  /* ---- Animação de entrada dos elementos ---- */
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
-
-    reveals.forEach((el, i) => {
-      el.style.transitionDelay = (i % 6) * 60 + 'ms';
-      io.observe(el);
-    });
-  } else {
-    reveals.forEach((el) => el.classList.add('visible'));
-  }
 
   /* ---- Ano automático no rodapé ---- */
   document.getElementById('year').textContent = new Date().getFullYear();
