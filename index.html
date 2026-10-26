@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="description" content="Barbearia masculina especializada em cortes clássicos e modernos, barba na navalha e atendimento premium.">
+<title>Navalha & Cia — Barbearia Masculina</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============ VARIÁVEIS ============ */
+:root{
+  --bg:#0b0b0d;
+  --bg-soft:#101014;
+  --card:#16161b;
+  --line:rgba(255,255,255,.07);
+  --gold:#c9a227;
+  --gold-light:#e8c85c;
+  --text:#f3f3f5;
+  --muted:#95959f;
+  --radius:18px;
+  --max:640px;
+}
+
+/* ============ RESET ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:transparent;
+}
+img{display:block;width:100%;height:100%;object-fit:cover;background:var(--card);}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+::selection{background:var(--gold);color:#0b0b0d;}
+
+/* ============ UTIL ============ */
+.container{
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 22px;
+}
+section{padding:76px 0;scroll-margin-top:80px;}
+.eyebrow{
+  display:inline-block;
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:12px;
+}
+h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-weight:400;
+  font-size:clamp(2.1rem,10vw,2.9rem);
+  line-height:1.02;
+  letter-spacing:.5px;
+  margin-bottom:14px;
+}
+.lead{color:var(--muted);font-size:.95rem;max-width:44ch;}
+.gold{color:var(--gold);}
+
+/* ============ HEADER ============ */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:14px 0;
+  padding-top:calc(14px + env(safe-area-inset-top));
+  border-bottom:1px solid transparent;
+  transition:background .35s ease, backdrop-filter .35s ease, border-color .35s ease;
+}
+.header.scrolled{
+  background:rgba(11,11,13,.8);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom-color:rgba(201,162,39,.18);
+}
+.header-inner{
+  max-width:var(--max);margin:0 auto;padding:0 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.45rem;letter-spacing:2.5px;line-height:1;
+  white-space:nowrap;
+}
+.logo span{color:var(--gold);}
+.btn-header{
+  font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:10px 18px;border-radius:999px;
+  color:#0b0b0d;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  box-shadow:0 6px 18px rgba(201,162,39,.25);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.btn-header:active{transform:scale(.96);}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;
+  display:flex;align-items:center;
+  min-height:100vh;
+  min-height:100svh;
+  padding:130px 0 90px;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+  background-color:#1a1a1f;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(11,11,13,.82) 0%, rgba(11,11,13,.55) 38%, rgba(11,11,13,.97) 100%),
+    radial-gradient(circle at 50% 28%, rgba(201,162,39,.16), transparent 62%);
+}
+.hero-content{position:relative;z-index:2;text-align:center;}
+.hero h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-weight:400;
+  font-size:clamp(3.2rem,17vw,5.2rem);
+  line-height:.9;
+  letter-spacing:1px;
+  margin:6px 0 20px;
+}
+.hero p{
+  color:#c9c9d2;
+  font-size:.98rem;
+  max-width:34ch;
+  margin:0 auto 34px;
+}
+.hero-actions{display:flex;flex-direction:column;gap:12px;max-width:340px;margin:0 auto;}
+
+/* ============ BOTÕES ============ */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 26px;
+  border-radius:999px;
+  font-size:.92rem;font-weight:600;letter-spacing:.02em;
+  transition:transform .18s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn:active{transform:scale(.97);}
+.btn-primary{
+  color:#0b0b0d;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  box-shadow:0 10px 28px rgba(201,162,39,.28);
+}
+.btn-ghost{
+  color:var(--text);
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(6px);
+}
+.btn svg{width:19px;height:19px;flex-shrink:0;}
+
+/* ============ SERVIÇOS ============ */
+.services{display:flex;flex-direction:column;gap:10px;margin-top:26px;}
+.service{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  transition:border-color .25s ease, transform .25s ease, background .25s ease;
+}
+.service:active{border-color:rgba(201,162,39,.5);transform:scale(.99);}
+.service h3{
+  font-size:.98rem;font-weight:600;letter-spacing:.01em;margin-bottom:2px;
+}
+.service p{font-size:.79rem;color:var(--muted);line-height:1.4;}
+.price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.4rem;letter-spacing:1px;
+  color:var(--gold);
+  white-space:nowrap;
+}
+
+/* ============ GALERIA ============ */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:26px;
+}
+.gallery figure{
+  aspect-ratio:1/1;
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--card);
+  border:1px solid var(--line);
+}
+.gallery figure:first-child{grid-column:span 2;aspect-ratio:16/11;}
+.gallery img{transition:transform .5s ease;}
+.gallery figure:active img{transform:scale(1.06);}
+
+/* ============ SOBRE ============ */
+.about-img{
+  aspect-ratio:16/10;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--line);
+  margin-bottom:26px;
+}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:26px;
+}
+.stat{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px 10px;
+  text-align:center;
+}
+.stat strong{
+  display:block;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.65rem;
+  color:var(--gold);
+  line-height:1;
+  letter-spacing:.5px;
+}
+.stat span{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+
+/* ============ CONTATO / HORÁRIOS ============ */
+.info-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:6px 20px;
+  margin-top:26px;
+}
+.info-row{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+  font-size:.88rem;
+}
+.info-row:last-child{border-bottom:none;}
+.info-row .label{color:var(--muted);}
+.info-row .value{font-weight:500;text-align:right;}
+.info-row .value.gold{color:var(--gold);}
+
+.cta-box{
+  margin-top:30px;
+  text-align:center;
+  padding:34px 22px;
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(201,162,39,.16), transparent 65%),
+    var(--bg-soft);
+  border:1px solid rgba(201,162,39,.22);
+}
+.cta-box h3{
+  font-family:'Bebas Neue',sans-serif;
+  font-weight:400;
+  font-size:1.75rem;
+  letter-spacing:.5px;
+  margin-bottom:8px;
+}
+.cta-box p{color:var(--muted);font-size:.88rem;margin-bottom:22px;}
+
+/* ============ FOOTER ============ */
+.footer{
+  padding:38px 0 calc(38px + env(safe-area-inset-bottom));
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+.footer .logo{font-size:1.25rem;margin-bottom:8px;}
+.footer p{font-size:.76rem;color:var(--muted);}
+.footer .sep{color:var(--gold);margin:0 6px;}
+
+/* ============ WHATSAPP FLUTUANTE ============ */
+.whats-float{
+  position:fixed;
+  right:18px;
+  bottom:calc(18px + env(safe-area-inset-bottom));
+  z-index:90;
+  width:58px;height:58px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,#2ee36b,#1faa4f);
+  box-shadow:0 10px 26px rgba(31,170,79,.38);
+  transition:transform .2s ease;
+}
+.whats-float:active{transform:scale(.92);}
+.whats-float svg{width:29px;height:29px;fill:#fff;}
+
+/* ============ ANIMAÇÃO REVEAL ============ */
+.reveal{
+  opacity:0;
+  transform:translateY(26px);
+  transition:opacity .75s ease, transform .75s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.visible{opacity:1;transform:none;}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+}
+
+/* ============ TABLET / DESKTOP ============ */
+@media (min-width:640px){
+  :root{--max:720px;}
+  section{padding:96px 0;}
+  .hero-actions{flex-direction:row;max-width:none;}
+  .gallery{grid-template-columns:repeat(3,1fr);gap:12px;}
+  .gallery figure:first-child{grid-column:span 3;aspect-ratio:21/9;}
+  .services{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .info-card{padding:6px 26px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#top" class="logo">NAVALHA<span>&</span>CIA</a>
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+       target="_blank" rel="noopener" class="btn-header">Agendar</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="container hero-content">
+    <span class="eyebrow">Desde 2015 · São Paulo</span>
+    <h1>ESTILO<br><span class="gold">É ATITUDE</span></h1>
+    <p>Cortes clássicos e modernos, barba na navalha e um atendimento que respeita o seu tempo.</p>
+
+    <div class="hero-actions">
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+         target="_blank" rel="noopener" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 0 16.48m4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-1.98-1.22 7.4 7.4 0 0 1-1.37-1.7c-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.43h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.13.17 1.74 2.65 4.2 3.72.59.25 1.05.4 1.4.51.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29"/></svg>
+        Agendar no WhatsApp
+      </a>
+      <a href="#servicos" class="btn btn-ghost">Ver serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVIÇOS ================= -->
+<section id="servicos">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Nossos serviços</span>
+      <h2>O corte certo,<br>sem enrolação</h2>
+      <p class="lead">Trabalhamos com hora marcada para você não perder tempo na espera.</p>
+    </div>
+
+    <ul class="services">
+      <li class="service reveal">
+        <div>
+          <h3>Corte Masculino</h3>
+          <p>Máquina, tesoura e finalização</p>
+        </div>
+        <span class="price">R$ 45</span>
+      </li>
+
+      <li class="service reveal">
+        <div>
+          <h3>Barba na Navalha</h3>
+          <p>Toalha quente, óleo e acabamento</p>
+        </div>
+        <span class="price">R$ 35</span>
+      </li>
+
+      <li class="service reveal">
+        <div>
+          <h3>Combo Corte + Barba</h3>
+          <p>O pacote completo, com desconto</p>
+        </div>
+        <span class="price">R$ 70</span>
+      </li>
+
+      <li class="service reveal">
+        <div>
+          <h3>Sobrancelha</h3>
+          <p>Design masculino na navalha</p>
+        </div>
+        <span class="price">R$ 20</span>
+      </li>
+
+      <li class="service reveal">
+        <div>
+          <h3>Pigmentação</h3>
+          <p>Preenchimento de falhas na barba</p>
+        </div>
+        <span class="price">R$ 40</span>
+      </li>
+
+      <li class="service reveal">
+        <div>
+          <h3>Platinado / Luzes</h3>
+          <p>Descoloração e tonalização</p>
+        </div>
+        <span class="price">R$ 120</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= GALERIA ================= -->
+<section id="galeria">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Galeria</span>
+      <h2>Nosso trabalho</h2>
+      <p class="lead">Um pouco do que sai da cadeira todos os dias.</p>
+    </div>
+
+    <div class="gallery">
+      <figure class="reveal">
+        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80"
+             alt="Interior da barbearia" loading="lazy" onerror="this.style.display='none'">
+      </figure>
+      <figure class="reveal">
+        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=500&q=80"
+             alt="Corte masculino" loading="lazy" onerror="this.style.display='none'">
+      </figure>
+      <figure class="reveal">
+        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=500&q=80"
+             alt="Barba feita na navalha" loading="lazy" onerror="this.style.display='none'">
+      </figure>
+      <figure class="reveal">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=500&q=80"
+             alt="Detalhe do acabamento" loading="lazy" onerror="this.style.display='none'">
+      </figure>
+      <figure class="reveal">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=500&q=80"
+             alt="Barbeiro finalizando o corte" loading="lazy" onerror="this.style.display='none'">
+      </figure>
+      <figure class="reveal">
+        <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?auto=format&fit=crop&w=500&q=80"
+             alt="Cliente satisfeito" loading="lazy" onerror="this.style.display='none'">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE ================= -->
+<section id="sobre">
+  <div class="container">
+    <figure class="about-img reveal">
+      <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80"
+           alt="Ambiente da barbearia" loading="lazy" onerror="this.style.display='none'">
+    </figure>
+
+    <div class="reveal">
+      <span class="eyebrow">Quem somos</span>
+      <h2>Não é só um corte.<br>É o seu momento.</h2>
+      <p class="lead">
+        Somos uma barbearia de bairro com alma clássica e cabeça moderna.
+        Café na entrada, boa música e barbeiros que entendem de formato de rosto,
+        textura de cabelo e — principalmente — de conversar antes de pegar a máquina.
+      </p>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><strong>10+</strong><span>Anos</span></div>
+      <div class="stat"><strong>5k+</strong><span>Clientes</span></div>
+      <div class="stat"><strong>4.9</strong><span>Avaliação</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section id="contato">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Onde nos encontrar</span>
+      <h2>Horários &amp; endereço</h2>
+    </div>
+
+    <div class="info-card reveal">
+      <div class="info-row">
+        <span class="label">Terça a Sexta</span>
+        <span class="value">09:00 – 20:00</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Sábado</span>
+        <span class="value">08:00 – 19:00</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Domingo e Segunda</span>
+        <span class="value gold">Fechado</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Endereço</span>
+        <span class="value">Rua Exemplo, 123<br>Centro · São Paulo/SP</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Telefone</span>
+        <a class="value" href="tel:+5511999999999">(11) 99999-9999</a>
+      </div>
+    </div>
+
+    <div class="cta-box reveal">
+      <h3>Bora marcar seu horário?</h3>
+      <p>Respondemos rapidinho no WhatsApp.</p>
+      <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+         target="_blank" rel="noopener" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 0 16.48m4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-1.98-1.22 7.4 7.4 0 0 1-1.37-1.7c-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.43h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.13.17 1.74 2.65 4.2 3.72.59.25 1.05.4 1.4.51.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29"/></svg>
+        Chamar no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="logo">NAVALHA<span class="gold">&</span>CIA</div>
+    <p>© <span id="year"></span> Navalha &amp; Cia<span class="sep">·</span>Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<!-- ================= WHATSAPP FLUTUANTE ================= -->
+<a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+   target="_blank" rel="noopener" class="whats-float" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.24 8.24 0 0 1 0 16.48m4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06a6.7 6.7 0 0 1-1.98-1.22 7.4 7.4 0 0 1-1.37-1.7c-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.13-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.43h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.13.17 1.74 2.65 4.2 3.72.59.25 1.05.4 1.4.51.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.29"/></svg>
+</a>
+
+<script>
+  /* ---- Header com fundo ao rolar ---- */
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---- Animação de entrada dos elementos ---- */
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach((el, i) => {
+      el.style.transitionDelay = (i % 6) * 60 + 'ms';
+      io.observe(el);
+    });
+  } else {
+    reveals.forEach((el) => el.classList.add('visible'));
+  }
+
+  /* ---- Ano automático no rodapé ---- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
